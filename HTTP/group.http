@@ -1,0 +1,23 @@
+This API creates a new group chat. 
+You need to provide the group name and an array of user IDs who will be the initial members of the group.
+POST http://localhost:3000/api/groups
+Authorization: Bearer token
+Content-Type: application/json
+
+{
+  "name": "Group Chat 1",
+  "members": ["user1", "user2"]
+}
+
+# This API sends a message to a specific group chat.
+# The 'senderId' is the ID of the user sending the message, and 'content' is the message itself.
+
+POST http://localhost:3000/api/groups/user1id/messages
+Authorization: Bearer token
+Content-Type: application/json
+
+{
+  "senderId": "user1",
+  "content": "Hey everyone, welcome to the group chat!"
+}
+

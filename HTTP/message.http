@@ -1,0 +1,27 @@
+# This API sends a direct message from one user to another.
+# You need to provide the sender's and receiver's IDs, along with the message content.
+POST http://localhost:3000/api/messages
+Authorization: Bearer token
+Content-Type: application/json
+
+{
+  "senderId": "userid",  
+  "receiverId": "userid",  
+  "content": "Hello, how are you?"  
+}
+
+
+# This API retrieves the message history between two users for direct messaging.
+# It uses pagination with 'page' and 'pageSize' for efficient retrieval.
+GET http://localhost:3000/api/messages/history
+Authorization: Bearer token
+Content-Type: application/json
+
+{
+  "userId": "userid",
+  "groupId": "groupid",
+  "page": 1,
+  "pageSize": 10,
+}
+
+
